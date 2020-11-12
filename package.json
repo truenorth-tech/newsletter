@@ -1,0 +1,28 @@
+{
+  "name": "newsletter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=production run-p dev:mjml dev:watch",
+    "dev:mjml": "./node_modules/.bin/mjml -w templates/\"$npm_config_t\".mjml -o dist/\"$npm_config_t\".html",
+    "dev:watch": "live-server ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truenorth-tech/newsletter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/truenorth-tech/newsletter/issues"
+  },
+  "homepage": "https://github.com/truenorth-tech/newsletter#readme",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "mjml": "^4.7.1",
+    "npm-run-all": "^4.1.5"
+  }
+}

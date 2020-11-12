@@ -1,0 +1,97 @@
+import mjml2html from 'mjml' /* Compile an mjml string */ const htmlOutput = mjml2html(`
+
+<mjml>
+  <mj-head>
+    <mj-title>TrueNorth Sales</mj-title>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css?family=Inter" />
+    <mj-attributes>
+      <mj-all font-family="'Inter'" font-weight="400" />
+      <mj-text padding="0" line-height="24px" font-size="16px" />
+      <mj-class name="title" padding="40px 40px 0px" font-size="24px" />
+      <mj-class name="subtitle" padding="0px 40px" font-weight="600" />
+      <mj-class name="text-turquoise" color="#019FB5" />
+    </mj-attributes>
+    <mj-style> .span-turquoise span { color: #019FB5 !important; } </mj-style>
+    <mj-breakpoint width="768px" />
+  </mj-head>
+  <mj-body width="768px">
+    <!-- Company Header -->
+    <mj-section background-color="#126A86">
+      <mj-column padding="2px 16px">
+        <mj-image width="160px" src="/images/logo/full-color-reversed.png" align="left" title="TrueNorth"></mj-image>
+      </mj-column>
+      <mj-column padding="12px 40px">
+        <mj-text align="right" color="#FFFFFF" font-weight="600">www.truenorth.co</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Introduction Text -->
+    <mj-section background-color="#126A86">
+      <mj-column padding="12px 40px">
+        <mj-text font-size="24px" color="#FFFFFF">Innovative ideas deserve the TrueSolution™</mj-text>
+        <mj-spacer height="18px" />
+        <mj-text font-size="18px" color="#FFFFFF">
+          Our customizable, digital, software product for complex industries including <strong>financial services</strong>, <strong>education</strong>, and <strong>healthcare</strong>.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Partners -->
+    <mj-section background-color="#126A86">
+      <mj-column padding="0px 40px" width="33%">
+        <mj-text font-weight="600" color="#FFFFFF">Our Featured Partners</mj-text>
+      </mj-column>
+      <mj-column background-color="#FFFFFF" width="67%">
+        <mj-text>Logos</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Main Wrapper -->
+    <mj-section background-color="#F2F5FC" padding="0px">
+      <!-- Sidebar -->
+      <mj-column width="33%" padding="40px">
+        <mj-text>Hello World</mj-text>
+      </mj-column>
+
+      <!-- Main -->
+      <mj-column background-color="#FFFFFF" width="67%">
+        <mj-text css-class="span-turquoise" mj-class="title">We’re not talkers, <span>we’re doers.</span></mj-text>
+        <mj-text padding="8px 40px">Your product delivered in <strong>3 to 6 months</strong>. How?</mj-text>
+
+        <mj-text mj-class="subtitle" padding-top="16px">We’re not rookies. </mj-text>
+        <mj-text mj-class="subtitle text-turquoise">We’re pioneers.</mj-text>
+        <mj-text padding="8px 40px">
+          TrueNorth’s execs and advisors are respected fintech pioneers who know your back-office, have suffered the same pain points and created award-winning solutions.
+        </mj-text>
+
+        <mj-text mj-class="subtitle" padding-top="16px">We’re not project man</mj-text>agers.
+        <mj-text mj-class="subtitle text-turquoise">We’re team captains.</mj-text>
+        <mj-text padding="8px 40px">
+          Our Team Captains are senior engineers who run your assigned dev team, guide you through automating your workflows and answer your technical questions directly.
+        </mj-text>
+
+        <mj-text mj-class="subtitle" padding-top="16px">We’re not average coders</mj-text>.
+        <mj-text mj-class="subtitle text-turquoise">We’re expert engineers.</mj-text>
+        <mj-text padding="8px 40px"> Our software engineers have mastered the most cutting-edge fintech applications in order to seamlessly integrate them into your TrueSolution, including: </mj-text>
+        <mj-image src="./images/sales-logos.png" alt="Fintech Applications" align="left" />
+        <mj-text padding="8px 40px 40px">
+          A free consultation with our leadership is all you need to get started building a reliable solution backed by the team setting the standard for fintech software development.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Contact information -->
+    <mj-section background-color="#126A86" padding="24px">
+      <mj-column width="25%">
+        <mj-text color="#FFFFFF" font-weight="600">Contact me today.</mj-text>
+      </mj-column>
+      <mj-column width="75%">
+        <mj-text css-class="span-turquoise" font-size="14px" color="#E9F9FB">
+          Matt Cunningham <span>/</span> Account Executive <span>/</span> 1 (703) 244-4043 <span>/</span> matt@truenorth.co
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
+
+`, options) /* Print the responsive HTML generated and MJML errors if any */ console.log(htmlOutput)
