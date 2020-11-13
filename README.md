@@ -1,17 +1,14 @@
-# newsletter
+# Newsletter
 
 TrueNorth Newsletter templates and assets.
 
-### Dev notes
+### Getting Started
 
-Using [MJML](https://mjml.io/) to generate the marukups. [Learn more](https://mjml.io/documentation/#basic-layout-example)
+We are using [MJML](https://mjml.io/) to generate the emails markup. [Learn more](https://mjml.io/documentation/#basic-layout-example)
 
-Compiles the file and outputs the HTML generated in output.html:
-
-`./node_modules/.bin/mjml templates/sales.mjml -o dist/sales.html`
-
-Development script passing filename as a template flag:
-
-`npm run dev --t=templateName`
+1. Create a new MJML template at `templates/filename.mjml`
+2. Run development script `npm run dev --t=templateName`
+3. Watch your changes on the web browser `/filename.html`
+4. Remember to use absolute URLs for images before going live.
 
 [Try it Live](https://mjml.io/try-it-live/)

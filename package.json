@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=production run-p dev:mjml dev:watch",
-    "dev:mjml": "./node_modules/.bin/mjml -w templates/\"$npm_config_t\".mjml -o dist/\"$npm_config_t\".html",
-    "dev:watch": "live-server ./dist",
+    "dev:mjml": "./node_modules/.bin/mjml -w templates/\"$npm_config_t\".mjml -o public/\"$npm_config_t\".html",
+    "dev:watch": "live-server ./public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
