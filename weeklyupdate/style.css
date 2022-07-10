@@ -1,0 +1,143 @@
+:root {
+    --tn-light-gray: rgba(240, 240, 240, 1);
+    --tn-blue: rgba(10, 19, 44, 1); 
+    --tn-cyan: rgba(31, 196, 219, 1); 
+    --font-size-s: 14px;
+    --font-size-m: 16px;
+    --font-size-l: 20px;
+    --font-size-xl: 28px;
+    --font-size-xxl: 36px;
+    --font-family-inter: "Inter";
+    --input-width: 450px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+    color: var(--tn-blue);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+}
+
+p,
+li {
+    line-height: 25px;
+}
+
+.content {
+    padding: 15px 15px;
+}
+
+.double-input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px 15px 0px;
+}
+
+.multi-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px 0px 15px 0px;
+}
+
+.multi-enter{
+    width: var(--input-width);
+    height: 60px;
+}
+
+.inline-input {
+    display: flex;
+    flex-direction: row;
+    width:300px;
+}
+
+.inline-input span:first-child{
+    width: 100px;
+}
+
+.inline-input span:last-child{
+    width: 100%;
+}
+
+.selector {
+    padding: 3px 2px 3px 2px;
+    border-radius: 3px;
+}
+
+#intro-select.selector {
+    width: 450px;
+}
+
+.buttons-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px 0px 15px 0px;
+    width: 100%;
+}
+
+.timeoffs {
+    display: flex;
+    flex-direction: column;
+}
+.timeoff{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+}
+
+button.main-button {
+    min-width: 150px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    background-color: var(--tn-cyan);
+    border: 0px;
+    color: white;
+}
+
+button.main-button:hover {
+    background-color: var(--tn-blue);
+}
+
+button.plus-button {
+    max-width: 40px;
+    border-radius: 3px;
+    padding: 3px 5px;
+    background-color: var(--tn-cyan);
+    border: 0px;
+    color: white;
+}
+
+
+button.plus-button:hover {
+    background-color: var(--tn-blue);
+}
+
+.title-plus {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: var(--input-width);
+    padding: 0 0 5px 0;
+    align-items: center;
+}
