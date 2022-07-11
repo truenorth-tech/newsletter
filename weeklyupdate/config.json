@@ -1,0 +1,32 @@
+{
+    "clients": [
+        {
+            "name": "Synapse",
+            "theme": "dark",
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/synapsefi-white.png",
+            "logoWidth": 100,
+            "captain": {
+                "name": "Daniel Osuna",
+                "email": "daniel.osuna@truenorth.co",
+                "phone": "+5491154242364"
+            }
+        },
+        {
+            "name": "Medallion Assesment",
+            "theme": "dark",
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/Leapfin-white.png",
+            "logoWidth": 220,
+            "captain": {
+                "name": "Joe Sanchez",
+                "email": "joe.sanchez@truenorth.co",
+                "phone": "+519809889797"
+            }
+        }
+
+    ],
+    "intros": [
+        "We’ve had a very productive week building your product. Here are some highlights of our progress.",
+        "This week has been a busy one, and productive! Below is a summary of all that is happening.",
+        "We are making good progress on all parts of your solution build. See below for our weekly highlights."
+    ]
+}
