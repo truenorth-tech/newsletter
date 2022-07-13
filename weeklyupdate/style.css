@@ -108,6 +108,7 @@ li {
     width: unset;
 }
 
+
 button.main-button {
     min-width: 150px;
     border-radius: 5px;
@@ -144,6 +145,7 @@ button.plus-button:hover {
     padding: 0 0 5px 0;
     align-items: center;
 }
+
 
 button.close {
     background-color: transparent;
@@ -205,3 +207,4 @@ button.close {
 h1 {
     font-size: var(--font-size-xl);
 }
+
