@@ -1,10 +1,11 @@
-var EmailConfig = function (config, localInfo){
+var EmailConfig = function (config, localInfo, mainIframe){
     var self = this;
     self.clients = ko.observableArray([]);
     self.selectedClient= ko.observable();
     self.selectedTheme= ko.observable('light');
     self.intros = ko.observableArray([]);
     self.selectedIntro= ko.observable('');
+    self.subjectEmail=ko.observable('Test for ');
 
     self.loadInfo = function () {
         ko.utils.arrayPushAll(self.clients, config.clients);
@@ -13,8 +14,19 @@ var EmailConfig = function (config, localInfo){
         ko.utils.arrayPushAll(self.nextWeek, localInfo.nextWeek);
         ko.utils.arrayPushAll(self.risks, localInfo.risks);
         ko.utils.arrayPushAll(self.timeoffs, localInfo.timeoffs);
+        currentDay = dayjs().day();
+        let monday;
+        if(currentDay>2){
+            self.now = dayjs().startOf('w').add(5, 'day');
+            monday = dayjs().startOf('w').add(1, 'day');
+        }else{
+            self.now = dayjs().subtract(1, 'week').startOf('w').add(5, 'day');
+            monday = dayjs().subtract(1, 'week').startOf('w').add(1, 'day');
+        }
+
         if(localInfo.client){
             self.selectedClient( self.getClient(localInfo.client));
+            self.subjectEmail( `${self.selectedClient().name}/Truenorth - Weekly Update from ${monday.format('MM/DD')} to ${self.now.format('MM/DD')}` );
         }
         if(localInfo.intro){
             self.selectedIntro( localInfo.intro);
@@ -27,8 +39,9 @@ var EmailConfig = function (config, localInfo){
 
     self.clientChanged = function(){
         console.log('client changed', self.selectedClient());
-
+        self.subjectEmail('Test for ' + self.selectedClient().name);
     }
+
     self.themeChanged = function(){
         console.log('theme changed', self.selectedTheme());
         console.log('current intro', self.selectedIntro());
@@ -97,7 +110,7 @@ var EmailConfig = function (config, localInfo){
     self.timeoffs = ko.observableArray([]);
   
     self.addTimeoff= function(){
-        self.addBullet(self.timeoffs, {id:0, who:'', when:''});
+        self.addBullet(self.timeoffs, {id:0, who:'', whenTo:'', whenFrom:''});
     }
 
     self.timeoffChanged = function(obsArray, bullet){
@@ -109,7 +122,7 @@ var EmailConfig = function (config, localInfo){
                 index =i;
             }
         }        
-        when = '' + bullet.when;
+        when = '' + bullet.whenFrom + bullet.whenTo;
         who = '' + bullet.who;
         obsArray.splice(index, 1);
         if((when && when.length) || (who && who.length) )
@@ -134,9 +147,6 @@ var EmailConfig = function (config, localInfo){
                 break;
             }
         }
-
-        console.log(index);
-        console.log(self.clients()[index]);
         return self.clients()[index];
     }
 
@@ -149,15 +159,25 @@ var EmailConfig = function (config, localInfo){
             thisWeek: self.thisWeek(), 
             nextWeek: self.nextWeek(),
             risks: self.risks(),
-            timeoffs: self.timeoffs()     
+            timeoffs: self.timeoffs(),
+            emailDate: self.now.format('MMMM D, YYYY')    
         }
         localStorage.setItem('email', JSON.stringify(info));
         localStorage.setItem('savedEmail', JSON.stringify(info));
-        
-        window.open( 'email.html', '_blank');
+        console.log('src');
+        mainIframe.src = 'email.html'
+        console.log('before');
+        $('#previewModal').modal('show');
+        console.log('after');
     }
 
+    self.closePreview= function(){
+        $('#previewModal').modal('hide');
+    }
 
+    self.copySubject= function(){
+        navigator.clipboard.writeText(self.subjectEmail());
+    }
 
     return self;
 };

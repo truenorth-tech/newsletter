@@ -10,7 +10,9 @@
     <meta name="theme-color" content="#ffffff" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -18,25 +20,31 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
     <link href="style.css" rel="stylesheet" />
     <script src="config.js"></script>
 </head>
 
 <body>
-    <div class="header">
-
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="https://newsletter.truenorth.co/weeklyupdate/assets/truenorth-white.png" valign="center" alt="TrueNorth logo" width="150" />
+            </div>
+            <div class="solution"><h1>Weekly Update</h1></div>
+        </div>
     </div>
     <div class="content container">
         <div class="double-input">
             <div class="inline-input">
                 <span>Client</span>
                 <span>
-                    <select id="client-select" class="selector" 
-                        data-bind="options: clients,
+                    <select id="client-select" class="selector" data-bind="options: clients,
                             optionsText: 'name',
                             value: selectedClient,
                             optionsCaption: 'Select the client...', event: {change: clientChanged}">
@@ -46,7 +54,8 @@
             <div class="inline-input">
                 <span>Theme</span>
                 <span>
-                    <select id="theme-select" class="selector" data-bind="value: selectedTheme, event: {change: themeChanged}">
+                    <select id="theme-select" class="selector"
+                        data-bind="value: selectedTheme, event: {change: themeChanged}">
                         <option value="dark">dark</option>
                         <option value="light">light</option>
                     </select>
@@ -56,52 +65,61 @@
         <div class="multi-content">
             <div>Select an intro</div>
             <div>
-                <select id="intro-select" class="selector"  
-                    data-bind="options: intros,
+                <select id="intro-select" class="selector" data-bind="options: intros,
                         value: selectedIntro,
                         optionsCaption: 'Select the intro...'">
                 </select>
             </div>
         </div>
         <div class="multi-content">
-            <div class="title-plus"><span>This week</span><button class="plus-button" data-bind="click: addThisWeek"><i class="fa-solid fa-plus"></i></button></div>
+            <div class="title-plus"><span>This week</span><button class="plus-button" data-bind="click: addThisWeek"><i
+                        class="fa-solid fa-plus"></i></button></div>
             <!-- ko foreach: $data.thisWeek -->
             <div>
-                <textarea class="multi-enter" data-bind="value: text, event:{ change: $parent.thisWeekChanged}" ></textarea>
+                <textarea class="multi-enter"
+                    data-bind="value: text, event:{ change: $parent.thisWeekChanged}"></textarea>
             </div>
             <!-- /ko -->
         </div>
         <div class="multi-content">
-            <div class="title-plus"><span>Next week</span><button class="plus-button" data-bind="click: addNextWeek"><i class="fa-solid fa-plus"></i></button></div>
+            <div class="title-plus"><span>Next week</span><button class="plus-button" data-bind="click: addNextWeek"><i
+                        class="fa-solid fa-plus"></i></button></div>
             <!-- ko foreach: $data.nextWeek -->
             <div>
-                <textarea class="multi-enter" data-bind="value: text, event:{ change: $parent.nextWeekChanged}" ></textarea>
+                <textarea class="multi-enter"
+                    data-bind="value: text, event:{ change: $parent.nextWeekChanged}"></textarea>
             </div>
             <!-- /ko -->
         </div>
         <div class="multi-content">
-            <div class="title-plus"><span>Risks</span><button class="plus-button" data-bind="click: addRisk"><i class="fa-solid fa-plus"></i></button></div>
+            <div class="title-plus"><span>Risks</span><button class="plus-button" data-bind="click: addRisk"><i
+                        class="fa-solid fa-plus"></i></button></div>
             <!-- ko foreach: $data.risks -->
             <div>
-                <textarea class="multi-enter" data-bind="value: text, event:{ change: $parent.risksChanged}" ></textarea>
+                <textarea class="multi-enter" data-bind="value: text, event:{ change: $parent.risksChanged}"></textarea>
             </div>
             <!-- /ko -->
         </div>
         <div class="multi-content">
-            <div class="title-plus"><span>National holidays - PTOs</span><button class="plus-button" data-bind="click: addTimeoff"><i class="fa-solid fa-plus"></i></button></div>
+            <div class="title-plus"><span>National holidays - PTOs</span><button class="plus-button"
+                    data-bind="click: addTimeoff"><i class="fa-solid fa-plus"></i></button></div>
             <div class="timeoffs">
                 <!-- ko foreach: $data.timeoffs -->
                 <div class="timeoff">
                     <div class="inline-input">
                         <span>When</span>
-                        <span>
-                            <input class="single-enter" data-bind="value: when, event:{ change: $parent.timeoffWhenChanged}"></input>
+                        <span class="daterange">
+                            <input class="single-enter" type="date"
+                                data-bind="value: whenFrom, event:{ change: $parent.timeoffWhenChanged}"></input>
+                            <input class="single-enter" type="date"
+                                data-bind="value: whenTo, event:{ change: $parent.timeoffWhenChanged}"></input>
                         </span>
                     </div>
                     <div class="inline-input">
                         <span>Who</span>
                         <span>
-                            <input class="single-enter" data-bind="value: who, event:{ change: $parent.timeoffWhoChanged}"></input>
+                            <input class="single-enter"
+                                data-bind="value: who, event:{ change: $parent.timeoffWhoChanged}"></input>
                         </span>
                     </div>
                 </div>
@@ -109,23 +127,52 @@
             </div>
         </div>
 
+
+
         <div class="buttons-content">
             <div><button class="main-button" data-bind="click: openPreview">Preview</button></div>
-            <div><button class="main-button">Copy to clipboard</button></div>
+            
         </div>
     </div>
-    <div class="preview">
 
+    <!-- Modal -->
+    <div class="modal fade modal-lg" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="previewModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="previewModalLongTitle">E-Mail preview</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-bind="click: closePreview">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" >
+                    <div class="inline-input">
+                        <span >Subject</span>
+                        <span class="subject" data-bind="text: subjectEmail"></span>
+                        <span class="subject-copy" ><button class="plus-button" data-bind="click: copySubject"><i class="fa-solid fa-copy"></i></button></span>
+                    </div>
+                    <iframe id="mainIframe" src="about.blank"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-bind="click: closePreview">Close</button>
+                    <button class="main-button" id="CopyToClip">Copy to clipboard</button>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- End Modal -->
 
     <script type="text/javascript">
-        $(function() {
-            const strEmail = localStorage.getItem('savedEmail');
+        $(function () {
+            const mainIframe = document.getElementById("mainIframe")
+
+            const strEmail = localStorage.getItem('email');
             const localInfo = strEmail ? JSON.parse(strEmail) : {
-                thisWeek:[{id:0, text:''}],
-                nextWeek:[{id:0, text:''}],
-                risks:[],
-                timeoffs:[],
+                thisWeek: [{ id: 0, text: '' }],
+                nextWeek: [{ id: 0, text: '' }],
+                risks: [],
+                timeoffs: [],
                 client: null,
                 intro: null,
             };
@@ -134,9 +181,9 @@
             $.ajax({
                 url: "config.json",
                 type: 'GET',
-                success: (result)=>{
+                success: (result) => {
                     console.log(result)
-                    var vm = EmailConfig( result, localInfo);
+                    var vm = EmailConfig(result, localInfo, mainIframe);
 
                     ko.applyBindings(vm);
                     vm.loadInfo();
@@ -145,10 +192,18 @@
                     // $("#content").show();
                     // $("#loading").hide();
                 },
-                error: function(error){
-                    console.log("Error getting the slient info",error);
-                } 
+                error: function (error) {
+                    console.log("Error getting the slient info", error);
+                }
             });
+
+            $("#CopyToClip").click(function () {
+                mainIframe.contentDocument.designMode = "on";
+                mainIframe.contentDocument.execCommand("selectAll", false, null);
+                mainIframe.contentDocument.execCommand("copy", false, null);
+                mainIframe.contentDocument.designMode = "off";
+
+            })
         });
 
     </script>

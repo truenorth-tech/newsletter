@@ -101,8 +101,11 @@ li {
 }
 .timeoff{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding-bottom: 5px;
+}
+.timeoff .inline-input{
+    width: unset;
 }
 
 button.main-button {
@@ -140,4 +143,65 @@ button.plus-button:hover {
     width: var(--input-width);
     padding: 0 0 5px 0;
     align-items: center;
+}
+
+button.close {
+    background-color: transparent;
+    border: 0px;
+    font-size: var(--font-size-l);
+}
+
+#mainIframe{
+    width: 100%;
+    height:  400px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-body .inline-input{
+    width: 600px;
+    justify-content: space-between;
+}
+
+.modal-body .inline-input .subject{
+    width: 400px;
+}
+
+.modal-body .inline-input .subject-copy{
+    width: unset;
+}
+
+.daterange{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    height:100px;
+    width: 600px;
+    background: url('https://newsletter.truenorth.co/weeklyupdate/assets/header-dark.png') no-repeat center bottom;
+    width: 600px;
+    padding: 35px 30px;
+}
+
+.solution {
+    padding: 0px 20px;
+}
+
+h1 {
+    font-size: var(--font-size-xl);
 }
