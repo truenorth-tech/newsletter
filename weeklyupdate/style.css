@@ -167,6 +167,7 @@ button.close {
 .modal-body .inline-input{
     width: 600px;
     justify-content: space-between;
+    margin-bottom: 25px;
 }
 
 .modal-body .inline-input .subject{
