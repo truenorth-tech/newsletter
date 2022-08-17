@@ -1,11 +1,15 @@
+
 var EmailConfig = function (config, localInfo, mainIframe){
+
     var self = this;
     self.clients = ko.observableArray([]);
     self.selectedClient= ko.observable();
     self.selectedTheme= ko.observable('light');
     self.intros = ko.observableArray([]);
     self.selectedIntro= ko.observable('');
+
     self.subjectEmail=ko.observable('Test for ');
+
 
     self.loadInfo = function () {
         ko.utils.arrayPushAll(self.clients, config.clients);
@@ -14,6 +18,7 @@ var EmailConfig = function (config, localInfo, mainIframe){
         ko.utils.arrayPushAll(self.nextWeek, localInfo.nextWeek);
         ko.utils.arrayPushAll(self.risks, localInfo.risks);
         ko.utils.arrayPushAll(self.timeoffs, localInfo.timeoffs);
+
         currentDay = dayjs().day();
         let monday;
         if(currentDay>2){
@@ -26,7 +31,7 @@ var EmailConfig = function (config, localInfo, mainIframe){
 
         if(localInfo.client){
             self.selectedClient( self.getClient(localInfo.client));
-            self.subjectEmail( `${self.selectedClient().name}/Truenorth - Weekly Update from ${self.monday.format('MM/DD')} to ${self.now.format('MM/DD')}` );
+            self.subjectEmail( `${self.selectedClient().name}/Truenorth - Weekly Update from ${monday.format('MM/DD')} to ${self.now.format('MM/DD')}` );
         }
         if(localInfo.intro){
             self.selectedIntro( localInfo.intro);
@@ -41,6 +46,7 @@ var EmailConfig = function (config, localInfo, mainIframe){
         console.log('client changed', self.selectedClient());
         self.subjectEmail( `${self.selectedClient().name}/Truenorth - Weekly Update from ${self.monday.format('MM/DD')} to ${self.now.format('MM/DD')}` );
     }
+
 
     self.themeChanged = function(){
         console.log('theme changed', self.selectedTheme());
@@ -111,6 +117,7 @@ var EmailConfig = function (config, localInfo, mainIframe){
   
     self.addTimeoff= function(){
         self.addBullet(self.timeoffs, {id:0, who:'', whenTo:'', whenFrom:''});
+
     }
 
     self.timeoffChanged = function(obsArray, bullet){
@@ -122,6 +129,7 @@ var EmailConfig = function (config, localInfo, mainIframe){
                 index =i;
             }
         }        
+
         when = '' + bullet.whenFrom + bullet.whenTo;
         who = '' + bullet.who;
         obsArray.splice(index, 1);
@@ -178,6 +186,7 @@ var EmailConfig = function (config, localInfo, mainIframe){
     self.copySubject= function(){
         navigator.clipboard.writeText(self.subjectEmail());
     }
+
 
     return self;
 };

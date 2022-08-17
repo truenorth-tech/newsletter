@@ -17,8 +17,10 @@ var EmailGenerator = function (localInfo){
     self.intros        = ko.observableArray([]);
 
     self.loadInfo = function () {
+
         console.log(localInfo)
         self.currentDate( localInfo.emailDate);
+
         self.intro(localInfo.intro);
         self.logo(localInfo.client.logo);
         self.logoWidth(localInfo.client.logoWidth);
@@ -28,11 +30,13 @@ var EmailGenerator = function (localInfo){
         ko.utils.arrayPushAll(self.nextWeek, localInfo.nextWeek);
         ko.utils.arrayPushAll(self.risks, localInfo.risks);
         const timeoffs = localInfo.timeoffs.map( function(item){
+
             console.log(dayjs(item.whenFrom))
             console.log(dayjs(item.whenTo))
             const from = dayjs(item.whenFrom).format("MMM-DD");
             const to = dayjs(item.whenTo).format("MMM-DD")
             return {text: '' + from + ' - ' + to +  ' | ' + item.who};
+
         });
         ko.utils.arrayPushAll(self.timeoffs, timeoffs);
         if(localInfo.client){
