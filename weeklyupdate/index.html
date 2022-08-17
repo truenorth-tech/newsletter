@@ -28,10 +28,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/advancedFormat.js"></script>
+    <script>
+        dayjs.extend(window.dayjs_plugin_advancedFormat)
+    </script>
 
     <link href="style.css" rel="stylesheet" />
-    <script src="config.js?version=2"></script>
+    <script src="config.js?version=95"></script>
 </head>
 
 <body>
@@ -74,13 +77,15 @@
         </div>
         <div class="multi-content">
             <div>Select an intro</div>
-            <div>
+            <div class="multi-content-cont">
 
                 <select id="intro-select" class="selector" data-bind="options: intros,
-
                         value: selectedIntro,
-                        optionsCaption: 'Select the intro...'">
+                        optionsCaption: 'Select the intro...',
+                        event: {change: introChanged}">
                 </select>
+                <textarea class="multi-enter"
+                    data-bind="value: customIntro, visible: customIntroVisible"></textarea>
             </div>
         </div>
         <div class="multi-content">
@@ -140,10 +145,8 @@
                     <div class="inline-input">
                         <span>Who</span>
                         <span>
-
                             <input class="single-enter"
                                 data-bind="value: who, event:{ change: $parent.timeoffWhoChanged}"></input>
-
                         </span>
                     </div>
                 </div>
@@ -177,8 +180,10 @@
                         <span class="subject" data-bind="text: subjectEmail"></span>
                         <span class="subject-copy" ><button class="plus-button" data-bind="click: copySubject"><i class="fa-solid fa-copy"></i></button></span>
                     </div>
-                    <iframe id="mainIframe" src="about.blank"></iframe>
+                    
+                    <iframe id="mainIframe" src="about:blank"></iframe>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" data-bind="click: closePreview">Close</button>
                     <button class="main-button" id="CopyToClip">Copy to clipboard</button>
@@ -201,6 +206,7 @@
 
                 client: null,
                 intro: null,
+                customIntro: null
             };
             console.log(localInfo);
 
@@ -209,7 +215,6 @@
                 type: 'GET',
 
                 success: (result) => {
-                    console.log(result)
                     var vm = EmailConfig(result, localInfo, mainIframe);
 
 

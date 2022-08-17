@@ -12,9 +12,13 @@
     <meta name="x-apple-disable-message-reformatting" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
-    <script src="generator.js?version=4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/advancedFormat.js"></script>
+    <script>
+        dayjs.extend(window.dayjs_plugin_advancedFormat)
+    </script>
+    <script src="generator.js?version=95"></script>
 
     <title>Weekly Update</title>
     <style>
@@ -154,7 +158,7 @@
                                             </tr>
 
 
-                                            <tr>
+                                            <tr data-bind="visible: showRisks">
                                                 <td>
                                                     <h3>
                                                         <img src="https://newsletter.truenorth.co/weeklyupdate/assets/bar.png" valign="bottom" alt="Heading decorator" width="19" />Risks - Blockers
@@ -168,7 +172,7 @@
                                             </tr>
 
 
-                                            <tr>
+                                            <tr data-bind="visible: showTimeoffs">
                                                 <td>
                                                     <h3>
                                                         <img src="https://newsletter.truenorth.co/weeklyupdate/assets/bar.png" valign="bottom" alt="Heading decorator" width="19" />Time Off

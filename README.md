@@ -12,3 +12,14 @@ We are using [MJML](https://mjml.io/) to generate the emails markup. [Learn more
 4. Remember to use absolute URLs for images before going live.
 
 [Try it Live](https://mjml.io/try-it-live/)
+
+
+Changes
+[X] Date: Fix the on date
+[X] Subject: Month in leters
+[X] Intro Custom
+[ ] Mail responsiv
+
+
+
+
