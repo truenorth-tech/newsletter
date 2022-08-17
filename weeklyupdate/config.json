@@ -26,7 +26,7 @@
             "name": "Kennek",
             "theme": "dark",
             "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/kennek-white.png",
-            "logoWidth": 120,
+            "logoWidth": 110,
             "captain": {
                 "name": "Florencia Torrelli"
             }
@@ -35,7 +35,7 @@
             "name": "Thrivos",
             "theme": "dark",
             "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/thrivos-white.png",
-            "logoWidth": 120,
+            "logoWidth": 110,
             "captain": {
                 "name": "Florencia Torrelli"
             }
@@ -44,7 +44,7 @@
             "name": "Mortgage Token",
             "theme": "dark",
             "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/mortgage-token-white.png",
-            "logoWidth": 120,
+            "logoWidth": 140,
             "captain": {
                 "name": "Florencia Torrelli"
             }
