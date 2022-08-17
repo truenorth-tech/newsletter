@@ -37,7 +37,8 @@ var EmailGenerator = function (localInfo){
         ko.utils.arrayPushAll(self.timeoffs, timeoffs);
         if(localInfo.client){
             self.client( localInfo.client);
-        }    }
+        }    
+    }
 
     self.background = function(){
         return localInfo.theme =='light' ? 

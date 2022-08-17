@@ -18,15 +18,15 @@ var EmailConfig = function (config, localInfo, mainIframe){
         let monday;
         if(currentDay>2){
             self.now = dayjs().startOf('w').add(5, 'day');
-            monday = dayjs().startOf('w').add(1, 'day');
+            self.monday = dayjs().startOf('w').add(1, 'day');
         }else{
             self.now = dayjs().subtract(1, 'week').startOf('w').add(5, 'day');
-            monday = dayjs().subtract(1, 'week').startOf('w').add(1, 'day');
+            self.monday = dayjs().subtract(1, 'week').startOf('w').add(1, 'day');
         }
 
         if(localInfo.client){
             self.selectedClient( self.getClient(localInfo.client));
-            self.subjectEmail( `${self.selectedClient().name}/Truenorth - Weekly Update from ${monday.format('MM/DD')} to ${self.now.format('MM/DD')}` );
+            self.subjectEmail( `${self.selectedClient().name}/Truenorth - Weekly Update from ${self.monday.format('MM/DD')} to ${self.now.format('MM/DD')}` );
         }
         if(localInfo.intro){
             self.selectedIntro( localInfo.intro);
@@ -39,7 +39,7 @@ var EmailConfig = function (config, localInfo, mainIframe){
 
     self.clientChanged = function(){
         console.log('client changed', self.selectedClient());
-        self.subjectEmail('Test for ' + self.selectedClient().name);
+        self.subjectEmail( `${self.selectedClient().name}/Truenorth - Weekly Update from ${self.monday.format('MM/DD')} to ${self.now.format('MM/DD')}` );
     }
 
     self.themeChanged = function(){
