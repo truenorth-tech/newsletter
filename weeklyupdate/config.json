@@ -53,7 +53,7 @@
             "name": "Unison",
             "theme": "dark",
             "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/unison-white.png",
-            "logoWidth": 140,
+            "logoWidth": 115,
             "captain": {
                 "name": "Joe Sanchez"
             }
@@ -65,4 +65,4 @@
         "This week has been a busy one, and productive! Below is a summary of all that is happening.",
         "We are making good progress on all parts of your solution build. See below for our weekly highlights."
     ]
-}
+}   
