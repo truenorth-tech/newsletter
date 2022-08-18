@@ -9,6 +9,7 @@ var EmailConfig = function (config, localInfo, mainIframe){
     self.selectedIntro= ko.observable('');
     self.customIntro = ko.observable();
     self.customIntroVisible = ko.observable(false);
+    self.showImport = ko.observable(false);
   
     self.subjectEmail=ko.observable('Truenorth - Weekly Update');
 
@@ -281,6 +282,14 @@ var EmailConfig = function (config, localInfo, mainIframe){
 
     self.closePreview= function(){
         $('#previewModal').modal('hide');
+    }
+    
+    self.openUpload= function(){
+        $('#uploadModal').modal('show');
+    }
+
+    self.closeUpload= function(){
+        $('#uploadModal').modal('hide');
     }
 
     self.copySubject= function(){

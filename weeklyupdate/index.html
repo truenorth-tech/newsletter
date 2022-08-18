@@ -34,7 +34,7 @@
     </script>
 
     <link href="style.css" rel="stylesheet" />
-    <script src="config.js?version=80"></script>
+    <script src="config.js?version=79"></script>
 </head>
 
 <body>
@@ -44,7 +44,17 @@
             <div class="logo">
                 <img src="https://newsletter.truenorth.co/weeklyupdate/assets/truenorth-white.png" valign="center" alt="TrueNorth logo" width="150" />
             </div>
-            <div class="solution"><h1>Weekly Update</h1></div>
+            <div class="solution">
+                <h1>Weekly Update</h1>
+                <div class="dropdown">
+                    <button class="dropbtn">...</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="exportdb">Export database</a>
+                        <a href="#" data-bind="click: openUpload">Import database</a>
+                        <a href="#" id="resetdb">Reset database</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -155,12 +165,8 @@
             </div>
         </div>
 
-
-
-
         <div class="buttons-content">
             <div><button class="main-button" data-bind="click: openPreview">Preview</button></div>
-            
         </div>
     </div>
 
@@ -194,8 +200,48 @@
     </div>
     <!-- End Modal -->
 
+    <!-- Modal -->
+    <div class="modal fade modal-md" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadModalLongTitle">Import e-mail database</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-bind="click: closeUpload">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" >
+                    <div >Select a JSON file from the file system</div>
+                    <div class="uploader">
+                        <span class="subject"><input class="classhere" type="file" name="import" id="import" /></span>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-bind="click: closeUpload">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+
     <script type="text/javascript">
+        function download(filename, text) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
         $(function () {
+
             const mainIframe = document.getElementById("mainIframe")
 
             const strEmail = localStorage.getItem('emaildb');
@@ -203,22 +249,20 @@
                 projects: [],
                 currentProject: null
             };
-            console.log(localInfo);
+            let config = null;
+            let vm = null;
 
             $.ajax({
                 url: "config.json",
                 type: 'GET',
 
                 success: (result) => {
-                    var vm = EmailConfig(result, localInfo, mainIframe);
+                    config = result;
+                    vm = EmailConfig(result, localInfo, mainIframe);
 
 
                     ko.applyBindings(vm);
                     vm.loadInfo();
-                    //vm.checkPeriod();
-                    // $("#user_data").show();
-                    // $("#content").show();
-                    // $("#loading").hide();
                 },
 
                 error: function (error) {
@@ -233,6 +277,30 @@
                 mainIframe.contentDocument.designMode = "off";
 
             })
+
+            $("body").on("change",".classhere",function(){
+                //Equivalent of getElementById
+                var fileInput = $(this)[0];//returns a HTML DOM object by putting the [0] since it's really an associative array.
+                var file = fileInput.files[0]; //there is only '1' file since they are not multiple type.
+
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    // Create a new image.
+                    localStorage.setItem('emaildb', reader.result);
+                    location.reload();
+                }
+                reader.readAsText(file);//attempts to read the file in question.
+                
+            });
+
+            $("#exportdb").click(function(){
+                download('emaildb.json', localStorage.getItem('emaildb') || '{}');
+            });
+
+            $("#resetdb").click(function(){
+                localStorage.removeItem('emaildb');
+            });
 
         });
 
