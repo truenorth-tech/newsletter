@@ -34,7 +34,7 @@
     </script>
 
     <link href="style.css" rel="stylesheet" />
-    <script src="config.js?version=95"></script>
+    <script src="config.js?version=80"></script>
 </head>
 
 <body>
@@ -55,10 +55,11 @@
                 <span>
 
                     <select id="client-select" class="selector" data-bind="options: clients,
-
                             optionsText: 'name',
                             value: selectedClient,
-                            optionsCaption: 'Select the client...', event: {change: clientChanged}">
+                            optionsCaption: 'Select the client...', 
+                            event: {change: clientChanged}"
+                    >
                     </select>
                 </span>
             </div>
@@ -197,16 +198,10 @@
         $(function () {
             const mainIframe = document.getElementById("mainIframe")
 
-            const strEmail = localStorage.getItem('email');
+            const strEmail = localStorage.getItem('emaildb');
             const localInfo = strEmail ? JSON.parse(strEmail) : {
-                thisWeek: [{ id: 0, text: '' }],
-                nextWeek: [{ id: 0, text: '' }],
-                risks: [],
-                timeoffs: [],
-
-                client: null,
-                intro: null,
-                customIntro: null
+                projects: [],
+                currentProject: null
             };
             console.log(localInfo);
 

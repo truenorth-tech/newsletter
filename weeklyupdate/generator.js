@@ -21,7 +21,6 @@ var EmailGenerator = function (localInfo){
 
 
     self.loadInfo = function () {
-        console.log(localInfo)
         self.currentDate( localInfo.emailDate);
 
         if(localInfo.intro=="Custom ..."){
@@ -40,8 +39,6 @@ var EmailGenerator = function (localInfo){
             self.showRisks(true);
         }
         const timeoffs = localInfo.timeoffs.filter(element=>{return !!element.who}).map( function(item){
-            console.log(dayjs(item.whenFrom));
-            console.log(dayjs(item.whenTo));
             let from = '';
             let to = '';
             if(item.whenFrom){
