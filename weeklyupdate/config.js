@@ -110,6 +110,8 @@ var EmailConfig = function (config, localInfo, mainIframe){
             }
             localInfo.currentProject = self.project.client.name;
             self.loadProject(); 
+        }else{
+            self.subjectEmail( self.getSubject(self.selectedClient().name) );
         }
    }
 

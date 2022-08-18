@@ -24,6 +24,7 @@ h4,
 h5,
 h6,
 p,
+select::-ms-expand,
 li {
     color: var(--tn-blue);
     font-family: var(--font-family-inter);
@@ -76,9 +77,16 @@ li {
     width: 100%;
 }
 
-.selector {
+.selector{
     padding: 3px 2px 3px 2px;
     border-radius: 3px;
+    background-color: white;
+}
+
+select::-ms-expand{
+    padding: 8px 5px 10px 5px;
+    border-radius: 5px;
+    background-color: white;
 }
 
 #intro-select.selector {
