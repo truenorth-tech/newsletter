@@ -1,14 +1,12 @@
 {
     "clients": [
         {
-            "name": "Synapse",
+            "name": "Kennek",
             "theme": "dark",
-            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/synapsefi-white.png",
-            "logoWidth": 100,
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/kennek-white.png",
+            "logoWidth": 110,
             "captain": {
-                "name": "Daniel Osuna",
-                "email": "daniel.osuna@truenorth.co",
-                "phone": "+5491154242364"
+                "name": "Florencia Torrelli"
             }
         },
         {
@@ -23,12 +21,23 @@
             }
         },
         {
-            "name": "Kennek",
+            "name": "Mortgage Token",
             "theme": "dark",
-            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/kennek-white.png",
-            "logoWidth": 110,
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/mortgage-token-white.png",
+            "logoWidth": 140,
             "captain": {
                 "name": "Florencia Torrelli"
+            }
+        },
+        {
+            "name": "Synapse",
+            "theme": "dark",
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/synapsefi-white.png",
+            "logoWidth": 100,
+            "captain": {
+                "name": "Daniel Osuna",
+                "email": "daniel.osuna@truenorth.co",
+                "phone": "+5491154242364"
             }
         },
         {
@@ -41,12 +50,12 @@
             }
         },
         {
-            "name": "Mortgage Token",
+            "name": "Unison",
             "theme": "dark",
-            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/mortgage-token-white.png",
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/unison-white.png",
             "logoWidth": 140,
             "captain": {
-                "name": "Florencia Torrelli"
+                "name": "Joe Sanchez"
             }
         }
     ],
