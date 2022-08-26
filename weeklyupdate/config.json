@@ -1,6 +1,15 @@
 {
     "clients": [
         {
+            "name": "Assured",
+            "theme": "dark",
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/Assured-white.png",
+            "logoWidth": 100,
+            "captain": {
+                "name": "Tobias Basteiro"
+            }
+        },
+        {
             "name": "Genubank",
             "theme": "dark",
             "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/Genubank-white.png",
