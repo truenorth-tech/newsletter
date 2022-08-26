@@ -1,6 +1,15 @@
 {
     "clients": [
         {
+            "name": "Genubank",
+            "theme": "dark",
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/Genubank-white.png",
+            "logoWidth": 120,
+            "captain": {
+                "name": "Lucia de Luca"
+            }
+        },
+        {
             "name": "Kennek",
             "theme": "dark",
             "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/kennek-white.png",
@@ -27,6 +36,15 @@
             "logoWidth": 140,
             "captain": {
                 "name": "Florencia Torrelli"
+            }
+        },
+        {
+            "name": "Orchard",
+            "theme": "dark",
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/orchard-white.png",
+            "logoWidth": 140,
+            "captain": {
+                "name": "Lucia de Luca"
             }
         },
         {

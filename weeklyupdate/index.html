@@ -299,7 +299,7 @@
             });
 
             $("#resetdb").click(function(){
-                if(confirm('This action will remove the e-mail database from the browser. This action cannot be undone. Are you sure that you want to reset the database.')){
+                if(confirm('This action will remove the e-mail database from the browser. This action cannot be undone. Are you sure do you want to reset the database.')){
                     localStorage.removeItem('emaildb');
                     location.reload();
                 }
