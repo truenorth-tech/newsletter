@@ -28,6 +28,15 @@
             }
         },
         {
+            "name": "Local TN Web",
+            "theme": "dark",
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/white.png",
+            "logoWidth": 100,
+            "captain": {
+                "name": "Brenda Gomez"
+            }
+        },        
+        {
             "name": "Medallion",
             "theme": "dark",
             "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/MedallionBank-white.png",
@@ -36,6 +45,15 @@
                 "name": "Joe Sanchez",
                 "email": "joe.sanchez@truenorth.co",
                 "phone": "+519809889797"
+            }
+        },
+        {
+            "name": "Money 20/20",
+            "theme": "dark",
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/white.png",
+            "logoWidth": 100,
+            "captain": {
+                "name": "Brenda Gomez"
             }
         },
         {
