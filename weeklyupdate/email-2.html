@@ -87,13 +87,14 @@
                                 <tr>
                                     <td>
                                         <![endif]-->
-                                            <table role="presentation" style="width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:Arial,sans-serif;font-size:16px;line-height:22px;color:#0a132c;background-color:#F0F0F0;">
+                                            <table role="presentation" style="width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:Arial,sans-serif;font-size:16px;line-height:22px;color:#0a132c;background-color:#FFFFFF;">
                                                 <tr>
                                                     <td style="padding:40px 16px 16px 32px;text-align:left;font-size:24px;font-weight:bold;">
                                                         <img src="https://newsletter.truenorth.co/weeklyupdate/assets/truenorth.png" alt="Logo" width="254" style="width:254px;max-width:90%;height:auto;border:none;text-decoration:none;color:#0a132c;">
                                                     </td>
                                                     <td style="padding:40px 32px 16px 16px;text-align:right;font-size:24px;font-weight:bold;">
-                                                        <img src="assets/synapse.png" alt="Logo" width="201" style="width:201px;max-width:90%;height:auto;border:none;text-decoration:none;color:#0a132c;">
+                                                        <img src="assets/synapse.png" alt="Logo" width="201" style="max-width:90%;height:auto;border:none;text-decoration:none;color:#0a132c;" 
+                                                            data-bind="attr: {src: logo, width: logoWidth, alt: logoAlt}">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -118,7 +119,7 @@
                                                     <![endif]-->
                                                     <div class="col-lge" style="display:inline-block;width:100%;max-width:145px;vertical-align:top;padding-bottom:20px;text-align:right">
                                                         <p style="Margin:0;text-align:right;">
-                                                            <span style="font-size:12px;font-family:Inter,Arial,sans-serif;font-weight:500;color:#0a132c;line-height:12px;">July 11, 2022</span>
+                                                            <span style="font-size:12px;font-family:Inter,Arial,sans-serif;font-weight:500;color:#0a132c;line-height:12px;" data-bind="text: currentDate"></span>
                                                         </p>
                                                     </div>
                                                     <!--[if mso]>
@@ -133,9 +134,7 @@
                                                         <div style="text-align:left;">
                                                             <p style="Margin:0;text-align:left;"><span style="font-size:16px;font-family:Inter,Arial,sans-serif;font-weight:400;color:#0a132c;line-height:24px;">Hi
                                                                     Team, </span></p>
-                                                            <p style="Margin:0;"><span style="font-size:16px;font-family:Inter,Arial,sans-serif;font-weight:400;color:#0a132c;line-height:24px;">We&rsquo;ve
-                                                                    had a very productive week building your product. Here are
-                                                                    some highlights of our progress.</span></p>
+                                                            <p style="Margin:0;"><span style="font-size:16px;font-family:Inter,Arial,sans-serif;font-weight:400;color:#0a132c;line-height:24px;" data-bind="text: intro"></span></p>
                                                         </div>                                                        
                                                     </td>
                                                 </tr>
@@ -212,7 +211,125 @@
                                                             </tr>
                                                         </table>
                                                     </td>
-                                                </tr>                                                
+                                                </tr> 
+                                                <tr>
+                                                    <td style="padding:8px 16px 8px 16px;font-size:0;width:100%;" colspan="2">
+                                                        <table border="0" cellpadding="0" cellspacing="0" style="border:none;vertical-align:top;background:#E9F9FB;background-color:#E9F9FB;" width="100%">
+                                                            <tr>
+                                                                <td width=100% style="padding:16px 40px 8px 40px; width:100%;">
+                                                                    <div style="text-align:left;padding:0px 0px 8px 0px;">
+                                                                        <p style="Margin:0;text-align:left;"><span style="font-size:18px;font-family:Inter,Arial,sans-serif;font-weight:600;color:#1fc4db;line-height:22px;">/
+                                                                            </span><span style="font-size:18px;font-family:Inter,Arial,sans-serif;font-weight:600;color:#0a132c;line-height:22px;">Risks - Blockers</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <p style="border-top:solid 1px #3c4e76;font-size:1px;margin:0px auto;width:100%;padding:0px 0px 8px 0px;">
+                                                                    </p>
+<!--[if mso | IE]>
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 1px #3c4e76;font-size:1px;margin:0px auto;width:488px;padding:0px 0px 8px 0px;" width="488px"><tr><td style="height:0;line-height:0;"> &nbsp;
+</td></tr></table>
+<![endif]-->
+                                                                    <div style="text-align:left;width:100%;color:#0a132c;padding-bottom:8px;">
+                                                                        <ul class="glist" style="font-size:16px;color:#0a132c;padding:0;font-weight:600;Margin:0 0 0 16px;">
+                                                                            <li style="Margin:0;">
+                                                                                <span style="font-size:16px;font-family:Inter,Arial,sans-serif;font-weight:600;color:#0a132c;line-height:19px;">
+                                                                                    <p
+                                                                                        style="Margin:0;text-align:left;">
+                                                                                        <span
+                                                                                            style="font-size:16px;font-family:Inter,Arial,sans-serif;font-weight:600;color:#0a132c;line-height:19px;">Internals</span>
+                                                                                </p>
+                                                                                </span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div style="text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" style="border:none;vertical-align:top;" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="left" class="x" style="font-size:0;word-break:break-word;">
+                                                                                        <div style="text-align:left;">
+                                                                                            <p style="Margin:0;text-align:left;padding:0px 0px 8px 0px;">
+                                                                                                <span style="font-size:14px;font-family:Inter,Arial,sans-serif;font-weight:700;color:#1fc4db;line-height:21px;">
+                                                                                                    ✓
+                                                                                                </span><span style="font-size:12px;font-family:Inter,Arial,sans-serif;font-weight:400;color:#0a132c;line-height:18px;">Complete<
+                                                                                                    with:
+                                                                                                    &ldquo;We
+                                                                                                    are
+                                                                                                    at
+                                                                                                    Sprint
+                                                                                                    X
+                                                                                                    and
+                                                                                                    we&rsquo;re
+                                                                                                    doing
+                                                                                                    this
+                                                                                                    and
+                                                                                                    that...&rdquo;</span>
+                                                                                            </p>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <td align="left" class="x" style="font-size:0;word-break:break-word;">
+                                                                                        <div style="text-align:left;">
+                                                                                            <p style="Margin:0;text-align:left;padding:0px 0px 8px 0px;">
+                                                                                                <span style="font-size:14px;font-family:Inter,Arial,sans-serif;font-weight:700;color:#1fc4db;line-height:21px;">
+                                                                                                    ✓
+                                                                                                </span><span style="font-size:12px;font-family:Inter,Arial,sans-serif;font-weight:400;color:#0a132c;line-height:18px;">Complete<
+                                                                                                    with:
+                                                                                                    &ldquo;We
+                                                                                                    are
+                                                                                                    at
+                                                                                                    Sprint
+                                                                                                    X
+                                                                                                    and
+                                                                                                    we&rsquo;re
+                                                                                                    doing
+                                                                                                    this
+                                                                                                    and
+                                                                                                    that...&rdquo;</span>
+                                                                                            </p>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr> 
+                                                
+                                                <tr>
+                                                    <td style="padding:16px 32px 16px 32px;font-size:0;width:100%" colspan="2">
+                                                        <div style="text-align:left;">
+                                                            <p style="Margin:0;text-align:left;"><span style="font-size:16px;font-family:Inter,Arial,sans-serif;font-weight:400;color:#0a132c;line-height:24px;">
+                                                                If you have any concerns, please feel free to reach me out.</span></p>
+                                                            <p style="Margin:0;"><span style="font-size:16px;font-family:Inter,Arial,sans-serif;font-weight:400;color:#0a132c;line-height:24px;">
+                                                                Thanks & regards,</span></p>
+                                                        </div>                                                        
+                                                    </td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td style="width:100%" colspan="2">
+                                                        <table border="0" cellpadding="0" cellspacing="0" style="background-color:#fffffe;border:none;vertical-align:middle;" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="center" class="d" style="font-size:0;padding:0;word-break:break-word;">
+                                                                        <p style="border-top:solid 16px #1fc4db;font-size:1px;margin:0px auto;width:100%;">
+                                                                        </p>
+                        <!--[if mso | IE]>
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 16px #1fc4db;font-size:1px;margin:0px auto;width:600px;" width="600px"><tr><td style="height:0;line-height:0;"> &nbsp;
+                        </td></tr></table>
+                        <![endif]-->
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>                                                        
+                                                    </td>
+                                                </tr>
+
                                             </table>
                                         <!--[if mso]>
                                     </td>
@@ -224,168 +341,20 @@
             </table>
         </div>
 
-                                    
-                                        <!-- <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
-                                            <tr>
-                                                <td height="30">&nbsp;</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="90%" align="left" valign="top">
-                                                    <p style="
-                                                            margin: 0;
-                                                            font-size: 12px;
-                                                            font-weight: 600;
-                                                            text-transform: uppercase;
-                                                        " data-bind="text: currentDate, style: { color: color }">
-                                                    </p>
-                                                    <h1 style="
-                                                            font-size: 32px;
-                                                            color: #fff;
-                                                            font-weight: 400;
-                                                            margin: 0 0 40px;
-                                                        ">
-                                                        Weekly Update
-                                                    </h1>
+        <script type="text/javascript">
+            $(function() {
+                var strEmail = localStorage.getItem('email');
+                if(strEmail){   
+                    localInfo = JSON.parse(strEmail);
+                }
+                var vm = EmailGenerator( localInfo);
 
-                                                    <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="100%">
-                                                        <tr>
-                                                            <td width="100">
-                                                                <img valign="center" data-bind="attr: {src: logo, width: logoWidth, alt: logoAlt}" />
-                                                            </td>
-                                                            <td width="20">&nbsp;</td>
-                                                            <td width="2">
-                                                                <img src="https://newsletter.truenorth.co/weeklyupdate/assets/logo-divisor.png" valign="center" alt="divisor" width="2" />
-                                                            </td>
-                                                            <td width="20">&nbsp;</td>
-                                                            <td>
-                                                                <img src="https://newsletter.truenorth.co/weeklyupdate/assets/truenorth-white.png" valign="center" alt="TrueNorth logo" width="120" />
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                                <td width="10%" align="right" valign="top">&nbsp;</td>
-                                            </tr>
-                                            <tr>
-                                                <td height="30">&nbsp;</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td width="20">&nbsp;</td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    -->
-                    <!-- DIVIDOR HEADER / BODY -->
-                    <!-- <tr>
-                        <td height="20">&nbsp;</td>
-                    </tr> -->
+                ko.applyBindings(vm);
+                vm.loadInfo();
+            });
 
-                    <!-- BODY -->
-                    <!-- <tr>
-                        <td align="center" valign="top" width="100%">
-                            <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
-                                <tr>
-                                    <td width="20">&nbsp;</td>
-                                    <td>
-                                        <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
-                                            <tr>
-                                                <td>
-                                                    <p>Hi Team,</p>
-                                                    <p data-bind="text: intro">
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h3>
-                                                        <img src="https://newsletter.truenorth.co/weeklyupdate/assets/bar.png" valign="bottom" alt="Heading decorator" width="19" />Activities
-                                                    </h3>
-                                                    <ul style="padding: 0 0 0 20px"> -->
-                                                        <!-- ko foreach: $data.thisWeek -->
-                                                        <!-- <li data-bind="text: text"></li> -->
-                                                        <!-- /ko -->
-                                                    <!-- </ul>
-                                                </td>
-                                            </tr>
+        </script>
 
-                                            <tr>
-                                                <td>
-                                                    <h3>
-                                                        <img src="https://newsletter.truenorth.co/weeklyupdate/assets/bar.png" valign="bottom" alt="Heading decorator" width="19" />Next Up
-                                                    </h3>
-                                                    <ul style="padding: 0 0 0 20px"> -->
-                                                        <!-- ko foreach: $data.nextWeek -->
-                                                        <!-- <li data-bind="text: text"></li> -->
-                                                        <!-- /ko -->
-                                                    <!-- </ul>
-                                                </td>
-                                            </tr>
-
-
-                                            <tr data-bind="visible: showRisks">
-                                                <td>
-                                                    <h3>
-                                                        <img src="https://newsletter.truenorth.co/weeklyupdate/assets/bar.png" valign="bottom" alt="Heading decorator" width="19" />Risks - Blockers
-                                                    </h3>
-                                                    <ul style="padding: 0 0 0 20px"> -->
-                                                        <!-- ko foreach: $data.risks -->
-                                                        <!-- <li data-bind="text: text"></li> -->
-                                                        <!-- /ko -->
-                                                    <!-- </ul>
-                                                </td>
-                                            </tr> -->
-
-
-                                            <!-- <tr data-bind="visible: showTimeoffs">
-                                                <td>
-                                                    <h3>
-                                                        <img src="https://newsletter.truenorth.co/weeklyupdate/assets/bar.png" valign="bottom" alt="Heading decorator" width="19" />Time Off
-                                                    </h3>
-                                                    <ul style="padding: 0 0 0 20px"> -->
-                                                        <!-- ko foreach: $data.timeoffs -->
-                                                        <!-- <li data-bind="text: text"></li> -->
-                                                        <!-- /ko -->
-                                                    <!-- </ul>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td height="30">&nbsp;</td>
-                                            </tr>
-
-                                        </table>
-                                    </td>
-                                    <td width="20">&nbsp;</td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr> --> 
-
-                    <!-- END -->
-                    <!-- <tr>
-                        <td height="20">&nbsp;</td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>  -->
-
-    <script type="text/javascript">
-        $(function() {
-            var strEmail = localStorage.getItem('email');
-            if(strEmail){   
-                localInfo = JSON.parse(strEmail);
-            }
-            var vm = EmailGenerator( localInfo);
-
-            ko.applyBindings(vm);
-            vm.loadInfo();
-        });
-
-    </script>
-
-</body>
-
+    </body>
 </html>
 

@@ -59,11 +59,11 @@
 
     </div>
     <div class="content container">
-
         <div class="double-input">
             <div class="inline-input">
                 <span>Client</span>
                 <span>
+
                     <select id="client-select" class="selector" data-bind="options: clients,
                             optionsText: 'name',
                             value: selectedClient,
@@ -73,153 +73,97 @@
                     </select>
                 </span>
             </div>
-        </div>
+            <div class="inline-input">
+                <span>Theme</span>
+                <span>
 
+                    <select id="theme-select" class="selector"
+                        data-bind="value: selectedTheme, event: {change: themeChanged}">
+
+                        <option value="dark">dark</option>
+                        <option value="light">light</option>
+                    </select>
+                </span>
+            </div>
+        </div>
         <div class="multi-content">
             <div>Select an intro</div>
             <div class="multi-content-cont">
+
                 <select id="intro-select" class="selector" data-bind="options: intros,
                         value: selectedIntro,
                         optionsCaption: 'Select the intro...',
                         event: {change: introChanged}">
                 </select>
-                <textarea class="multi-enter" data-bind="value: customIntro, visible: customIntroVisible"></textarea>
+                <textarea class="multi-enter"
+                    data-bind="value: customIntro, visible: customIntroVisible"></textarea>
             </div>
         </div>
-
         <div class="multi-content">
-            <div class="title-plus">
-                <span>Activities</span>
-                <button class="plus-button" data-bind="click: addThisWeek">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
+
+            <div class="title-plus"><span>This week</span><button class="plus-button" data-bind="click: addThisWeek"><i
+                        class="fa-solid fa-plus"></i></button></div>
             <!-- ko foreach: $data.thisWeek -->
-                <div>
-                    <textarea class="multi-enter" data-bind="value: text, event:{ change: $parent.thisWeekChanged}"></textarea>
-                </div>
+            <div>
+                <textarea class="multi-enter"
+                    data-bind="value: text, event:{ change: $parent.thisWeekChanged}"></textarea>
+
+            </div>
             <!-- /ko -->
         </div>
-
         <div class="multi-content">
-            <div class="title-plus">
-                <span>Next week</span>
-                <button class="plus-button" data-bind="click: addNextWeek">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
+
+            <div class="title-plus"><span>Next week</span><button class="plus-button" data-bind="click: addNextWeek"><i
+                        class="fa-solid fa-plus"></i></button></div>
             <!-- ko foreach: $data.nextWeek -->
-                <div>
-                    <textarea class="multi-enter" data-bind="value: text, event:{ change: $parent.nextWeekChanged}"></textarea>
-                </div>
+            <div>
+                <textarea class="multi-enter"
+                    data-bind="value: text, event:{ change: $parent.nextWeekChanged}"></textarea>
+
+            </div>
             <!-- /ko -->
         </div>
-
         <div class="multi-content">
-            <div class="title-plus">
-                <span>Internal Risks</span>
-                <button class="plus-button" data-bind="click: addIntRisk">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
+
+            <div class="title-plus"><span>Risks</span><button class="plus-button" data-bind="click: addRisk"><i
+                        class="fa-solid fa-plus"></i></button></div>
             <!-- ko foreach: $data.risks -->
-                <div>
-                    <textarea class="multi-enter" data-bind="value: text, event:{ change: $parent.intRisksChanged}"></textarea>
-                </div>
+            <div>
+                <textarea class="multi-enter" data-bind="value: text, event:{ change: $parent.risksChanged}"></textarea>
+
+            </div>
             <!-- /ko -->
         </div>
-
         <div class="multi-content">
-            <div class="title-plus">
-                <span>External Risks</span>
-                <button class="plus-button" data-bind="click: addExtRisk">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
-            <!-- ko foreach: $data.risks -->
-                <div>
-                    <textarea class="multi-enter" data-bind="value: text, event:{ change: $parent.extRisksChanged}"></textarea>
-                </div>
-            <!-- /ko -->
-        </div>
 
-        <div class="multi-content">
-            <div class="title-plus">
-                <span>Time off - National holidays</span>
-                <button class="plus-button" data-bind="click: addHoliday">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
+            <div class="title-plus"><span>National holidays - PTOs</span><button class="plus-button"
+                    data-bind="click: addTimeoff"><i class="fa-solid fa-plus"></i></button></div>
+
             <div class="timeoffs">
                 <!-- ko foreach: $data.timeoffs -->
                 <div class="timeoff">
                     <div class="inline-input">
                         <span>When</span>
+
                         <span class="daterange">
-                            <input class="single-enter" type="date" data-bind="value: whenFrom, event:{ change: $parent.holidayWhenChanged}"></input>
-                            <input class="single-enter" type="date"data-bind="value: whenTo, event:{ change: $parent.holidayWhenChanged}"></input>
+                            <input class="single-enter" type="date"
+                                data-bind="value: whenFrom, event:{ change: $parent.timeoffWhenChanged}"></input>
+                            <input class="single-enter" type="date"
+                                data-bind="value: whenTo, event:{ change: $parent.timeoffWhenChanged}"></input>
+
                         </span>
                     </div>
                     <div class="inline-input">
                         <span>Who</span>
                         <span>
                             <input class="single-enter"
-                                data-bind="value: who, event:{ change: $parent.holdayWhoChanged}"></input>
+                                data-bind="value: who, event:{ change: $parent.timeoffWhoChanged}"></input>
                         </span>
                     </div>
                 </div>
                 <!-- /ko -->
             </div>
         </div>
-
-        <div class="multi-content">
-            <div class="title-plus">
-                <span>timeoff - PTOs</span>
-                <button class="plus-button" data-bind="click: addPTO">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
-            <div class="timeoffs">
-                <!-- ko foreach: $data.timeoffs -->
-                <div class="timeoff">
-                    <div class="inline-input">
-                        <span>When</span>
-                        <span class="daterange">
-                            <input class="single-enter" type="date" data-bind="value: whenFrom, event:{ change: $parent.ptoWhenChanged}"></input>
-                            <input class="single-enter" type="date"data-bind="value: whenTo, event:{ change: $parent.ptoWhenChanged}"></input>
-                        </span>
-                    </div>
-                    <div class="inline-input">
-                        <span>Who</span>
-                        <span>
-                            <input class="single-enter" data-bind="value: who, event:{ change: $parent.ptoWhoChanged}"></input>
-                        </span>
-                    </div>
-                </div>
-                <!-- /ko -->
-            </div>
-        </div>
-
-        <div class="multi-content">
-            <div class="title-plus">
-                <span>Project Documents</span>
-                <button class="plus-button" data-bind="click: addDocument">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
-            <!-- ko foreach: $data.risks -->
-                <div>
-                    <span>
-                        <input class="single-enter" data-bind="value: text, event:{ change: $parent.textDocChanged}"></input>
-                    </span>
-                    <span>
-                        <input class="single-enter" data-bind="value: text, event:{ change: $parent.linkDocChanged}"></input>
-                    </span>
-                </div>
-                
-            <!-- /ko -->
-        </div>
-
 
         <div class="buttons-content">
             <div><button class="main-button" data-bind="click: openPreview">Preview</button></div>
