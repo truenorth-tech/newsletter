@@ -28,6 +28,15 @@
             }
         },
         {
+            "name": "Kickfin",
+            "theme": "dark",
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/Kickfin-white.png",
+            "logoWidth": 110,
+            "captain": {
+                "name": "Franco Corgatelli"
+            }
+        },
+        {
             "name": "Local TN Web",
             "theme": "dark",
             "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/white.png",
