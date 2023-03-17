@@ -34,7 +34,7 @@
     </script>
 
     <link href="style.css" rel="stylesheet" />
-    <script src="config.js?version=79"></script>
+    <script src="config.js?version=80"></script>
 </head>
 
 <body>
@@ -251,9 +251,10 @@
             };
             let config = null;
             let vm = null;
+            let rdm = Math.floor(Math.random() * 10);
 
             $.ajax({
-                url: "config.json",
+                url: `config.json?${rdm}`,
                 type: 'GET',
 
                 success: (result) => {
