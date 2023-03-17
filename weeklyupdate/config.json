@@ -37,6 +37,15 @@
             }
         },
         {
+            "name": "Lakeview",
+            "theme": "light",
+            "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/lakeview_logo.png",
+            "logoWidth": 100,
+            "captain": {
+                "name": "Sandro Gatto"
+            }
+        },         
+        {
             "name": "Local TN Web",
             "theme": "dark",
             "logo": "https://newsletter.truenorth.co/weeklyupdate/assets/white.png",
